@@ -8,12 +8,15 @@ import {
   MapPin,
   MessageSquareText,
   Menu,
-  Phone,
   Send,
   Sprout,
   User,
 } from 'lucide-react'
-import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import joyPhoto from './assets/joy.jpg'
+import sharifPhoto from './assets/sharif.jpg'
+import shovoPhoto from './assets/shovo.jpg'
+import zabirPhoto from './assets/zabir.jpg'
 
 const focusAreas = [
   {
@@ -60,28 +63,28 @@ const aboutPillars = [
 
 const team = [
   {
-    avatar: 'avatar-a',
-    name: 'Research Mentor',
-    role: 'Methods and writing',
-    text: 'Guides students through research design, literature review, data collection, and publication-ready communication.',
+    photo: zabirPhoto,
+    name: 'Abdullah Al Zabir',
+    role: 'CEO',
+    text: 'Leads the vision for research learning, product direction, student growth, and long-term project strategy.',
   },
   {
-    avatar: 'avatar-b',
-    name: 'Software Lead',
-    role: 'Product and engineering',
-    text: 'Turns research outcomes into usable web tools, automation workflows, and lightweight product prototypes.',
+    photo: sharifPhoto,
+    name: 'Shariful Islam',
+    role: 'Frontend Developer',
+    text: 'Designs and builds polished interfaces that make research tools easier to use, scan, and understand.',
   },
   {
-    avatar: 'avatar-c',
-    name: 'Skill Coach',
-    role: 'Student development',
-    text: 'Runs practical sessions on coding, data literacy, documentation, teamwork, and career-ready technical habits.',
+    photo: shovoPhoto,
+    name: 'Shahriar Shovo',
+    role: 'Backend & DevOps',
+    text: 'Shapes APIs, deployments, server workflows, and stable infrastructure for research-based software.',
   },
   {
-    avatar: 'avatar-d',
-    name: 'Project Coordinator',
-    role: 'Community and delivery',
-    text: 'Keeps learners, mentors, projects, and partners connected from the first idea to the final demo.',
+    photo: joyPhoto,
+    name: 'MD Joy Islam',
+    role: 'Backend Developer',
+    text: 'Develops backend logic, data flows, and reliable services that support student and research projects.',
   },
 ]
 
@@ -105,11 +108,11 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/75 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a className="flex items-center gap-3" href="#home" aria-label="fakibaz gobeshok home">
+        <a className="flex items-center gap-3" href="#home" aria-label="fakibaj gobeshok home">
           <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-sm font-bold text-white">
             FG
           </span>
-          <span className="text-lg font-bold lowercase">fakibaz gobeshok</span>
+          <span className="text-lg font-bold lowercase">fakibaj gobeshok</span>
         </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
@@ -145,11 +148,11 @@ function Hero() {
     <section id="home" className="hero-shell relative flex items-center overflow-hidden pt-24">
       <div className="mx-auto w-full max-w-7xl px-5 pb-14 sm:px-8">
         <div className="max-w-2xl">
-          <p className="mb-4 text-sm font-semibold uppercase text-cyan-700">
+          <p className="mb-4 text-sm font-semibold uppercase text-accent">
             Research school and software lab
           </p>
           <h1 className="text-5xl font-black leading-none text-slate-950 sm:text-7xl lg:text-8xl">
-            Fakibaz Gobeshok
+            Fakibaj Gobeshok
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700 sm:text-xl">
             We teach research, turn research ideas into useful software, and help students build the skills to think,
@@ -158,7 +161,7 @@ function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 font-bold text-white shadow-sm transition hover:bg-coral-dark"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 font-bold text-white shadow-sm transition hover:bg-accent-dark"
               href="#work"
             >
               Explore our work
@@ -201,7 +204,7 @@ function FocusAreas() {
           <p className="section-kicker">What we do</p>
           <h2 className="section-title">A small identity with a broad research habit.</h2>
           <p className="section-copy">
-            Fakibaz Gobeshok is built for students who want research to feel less distant and more usable. We combine
+            fakibaj Gobeshok is built for students who want research to feel less distant and more usable. We combine
             structured guidance, project practice, and software thinking in one learning culture.
           </p>
         </div>
@@ -209,7 +212,7 @@ function FocusAreas() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {focusAreas.map(({ icon: Icon, title, text }) => (
             <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm" key={title}>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-cyan-50 text-cyan-700">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-teal-50 text-accent">
                 <Icon size={24} />
               </div>
               <h3 className="text-xl font-bold text-slate-950">{title}</h3>
@@ -230,7 +233,7 @@ function About() {
           <p className="section-kicker">About</p>
           <h2 className="section-title">We make research practical enough to learn and strong enough to build from.</h2>
           <p className="section-copy">
-            Fakibaz Gobeshok is a learning and building space for students who want research to become clearer, more
+            fakibaj Gobeshok is a learning and building space for students who want research to become clearer, more
             useful, and more visible. We teach the thinking, then turn the strongest insights into simple software and
             skill-building projects.
           </p>
@@ -251,7 +254,7 @@ function About() {
         <div className="about-process-card">
           <div className="flex items-start justify-between gap-6">
             <div>
-              <p className="text-sm font-extrabold uppercase text-cyan-700">Our rhythm</p>
+              <p className="text-sm font-extrabold uppercase text-accent">Our rhythm</p>
               <h3 className="mt-3 text-3xl font-black leading-tight text-slate-950">From question to working proof.</h3>
             </div>
             <span className="about-spark">
@@ -279,10 +282,10 @@ function About() {
 }
 function Upcoming() {
   return (
-    <section id="upcoming" className="bg-amber-50 py-20">
+    <section id="upcoming" className="upcoming-section py-20">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div>
-          <p className="section-kicker text-green-700">Upcoming project</p>
+          <p className="section-kicker text-accent">Upcoming project</p>
           <h2 className="section-title">Mangoseed starts with one small idea and grows into a working product.</h2>
           <p className="section-copy">
             Mangoseed is our upcoming research-to-software project space. It will collect student ideas, guide them
@@ -290,14 +293,14 @@ function Upcoming() {
           </p>
         </div>
 
-        <div className="mangoseed-panel rounded-lg border border-amber-200 bg-white p-7 shadow-sm">
-          <Sprout className="mb-6 text-green-700" size={40} />
+        <div className="mangoseed-panel rounded-lg border border-teal-100 bg-white p-7 shadow-sm">
+          <Sprout className="mb-6 text-accent" size={40} />
           <h3 className="text-2xl font-black text-slate-950">From seed to system</h3>
           <p className="mt-4 leading-7 text-slate-650">
             Idea intake, mentor review, prototype sprint, student demo, and practical documentation in one project flow.
           </p>
           <a
-            className="mt-7 inline-flex items-center gap-2 rounded-lg bg-green-700 px-5 py-3 font-bold text-white transition hover:bg-green-800"
+            className="mt-7 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-bold text-white transition hover:bg-accent-dark"
             href="#contact"
           >
             Join the waitlist
@@ -326,11 +329,11 @@ function Team() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member) => (
             <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" key={member.name}>
-              <div className={`avatar ${member.avatar}`} role="img" aria-label={`${member.name} portrait graphic`}>
-                <span>{member.name.slice(0, 1)}</span>
+              <div className="avatar" role="img" aria-label={`${member.name} portrait`}>
+                <img src={member.photo} alt={`${member.name} portrait`} />
               </div>
               <h3 className="mt-5 text-xl font-black text-slate-950">{member.name}</h3>
-              <p className="mt-1 font-semibold text-coral">{member.role}</p>
+              <p className="mt-1 font-semibold text-accent">{member.role}</p>
               <p className="mt-4 text-sm leading-6 text-slate-600">{member.text}</p>
             </article>
           ))}
@@ -365,21 +368,18 @@ function Contact() {
 
             <div className="mt-8 space-y-5">
               <ContactMethod icon={MapPin} label="Location" value="Dhaka, Bangladesh" />
-              <ContactMethod icon={Phone} label="Phone" value="+880 1000 000 000" href="tel:+8801000000000" />
               <ContactMethod
                 icon={Mail}
                 label="Email"
-                value="hello@fakibazgobeshok.com"
-                href="mailto:hello@fakibazgobeshok.com"
+                value="hello@fakibajgobeshok.com"
+                href="mailto:hello@fakibajgobeshok.com"
               />
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <SocialLink icon={FaLinkedinIn} label="LinkedIn" />
-              <SocialLink icon={FaGithub} label="GitHub" />
-              <SocialLink icon={FaFacebookF} label="Facebook" />
-              <SocialLink icon={FaInstagram} label="Instagram" />
-              <SocialLink icon={FaYoutube} label="YouTube" />
+              <SocialLink icon={FaLinkedinIn} label="LinkedIn" href="https://linkedin.com/company/fakibaj-gobeshok" />
+              <SocialLink icon={FaFacebookF} label="Facebook" href="https://www.facebook.com/fakibaj.gobeshok" />
+              <SocialLink icon={FaYoutube} label="YouTube" href="https://youtube.com/@fakibazgobeshok" />
             </div>
           </aside>
 
@@ -408,7 +408,7 @@ function Contact() {
       </div>
 
       <footer className="mx-auto mt-16 flex max-w-7xl flex-col gap-4 border-t border-slate-200 px-5 pt-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <p>&copy; 2026 fakibaz gobeshok. Research, software, and student skill development.</p>
+        <p>&copy; {new Date().getFullYear()} Fakibaj Gobeshok. Research, software, and student skill development.</p>
         <a className="font-semibold text-slate-700 hover:text-slate-950" href="#home">
           Back to top
         </a>
@@ -441,9 +441,9 @@ function ContactMethod({ icon: Icon, label, value, href }) {
   return <div className="contact-method">{content}</div>
 }
 
-function SocialLink({ icon: Icon, label }) {
+function SocialLink({ icon: Icon, label, href }) {
   return (
-    <a className="social-link" href="#contact" aria-label={label}>
+    <a className="social-link" href={href} aria-label={label} target="_blank" rel="noreferrer">
       <Icon size={17} />
     </a>
   )
