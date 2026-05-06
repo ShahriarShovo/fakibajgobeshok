@@ -76,7 +76,7 @@ const team = [
   },
   {
     photo: shovoPhoto,
-    name: 'Shahriar Shovo',
+    name: 'Md Shahriar Rahaman',
     role: 'Backend & DevOps',
     text: 'Shapes APIs, deployments, server workflows, and stable infrastructure for research-based software.',
   },
@@ -108,11 +108,13 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/75 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a className="flex items-center gap-3" href="#home" aria-label="fakibaj gobeshok home">
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-950 text-sm font-bold text-white">
-            FG
-          </span>
-          <span className="text-lg font-bold lowercase">fakibaj gobeshok</span>
+        <a className="brand-lockup" href="#home" aria-label="fakibaj gobeshok home">
+          <img
+            className="brand-logo"
+            src="/fg.jpg"
+            alt="Fakibaj Gobeshok logo"
+          />
+          <span className="brand-wordmark">Fakibaj Gobeshok</span>
         </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
