@@ -349,7 +349,8 @@ function Team() {
           <div className="future-content">
             <span className="future-content-frame" aria-hidden="true" />
             <p className="future-kicker">Future generation researcher</p>
-            <h3>Little Inspiration Officer</h3>
+            <h3>Ariba Arif Manha</h3>
+            <p className="future-name">Little Inspiration Officer</p>
             <p>
               Reminds the team to build with care, kindness, and hope for the next generation of learners.
             </p>

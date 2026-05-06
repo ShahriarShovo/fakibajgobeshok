@@ -292,8 +292,16 @@ a {
   text-transform: uppercase;
 }
 
+.future-name {
+  margin-top: 1.25rem;
+  color: #0f766e;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
 .future-content h3 {
-  margin-top: 0.55rem;
+  margin-top: 0.35rem;
   color: #020617;
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 900;
