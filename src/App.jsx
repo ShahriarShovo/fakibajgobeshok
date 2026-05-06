@@ -13,6 +13,7 @@ import {
   User,
 } from 'lucide-react'
 import { FaFacebookF, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import futureGenerationPhoto from './assets/future generation.jpg'
 import joyPhoto from './assets/joy.jpg'
 import sharifPhoto from './assets/sharif.jpg'
 import shovoPhoto from './assets/shovo.jpg'
@@ -340,6 +341,24 @@ function Team() {
             </article>
           ))}
         </div>
+
+        <article className="future-card mt-8">
+          <div className="future-photo">
+            <img src={futureGenerationPhoto} alt="Future generation researcher" />
+          </div>
+          <div className="future-content">
+            <span className="future-content-frame" aria-hidden="true" />
+            <p className="future-kicker">Future generation researcher</p>
+            <h3>Little Inspiration Officer</h3>
+            <p>
+              Reminds the team to build with care, kindness, and hope for the next generation of learners.
+            </p>
+            <div className="future-note">
+              <span>Why it matters</span>
+              <strong>Every tool we build should make learning feel kinder, clearer, and more possible.</strong>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   )
@@ -373,8 +392,8 @@ function Contact() {
               <ContactMethod
                 icon={Mail}
                 label="Email"
-                value="hello@fakibajgobeshok.com"
-                href="mailto:hello@fakibajgobeshok.com"
+                value="contact@fakibajgobeshok.org"
+                href="mailto:contact@fakibajgobeshok.org"
               />
             </div>
 
