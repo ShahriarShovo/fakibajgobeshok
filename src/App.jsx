@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   AtSign,
   ArrowRight,
@@ -366,6 +367,71 @@ function Team() {
 }
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    website: '',
+  })
+  const [formStatus, setFormStatus] = useState({ type: 'idle', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  function handleContactChange(event) {
+    const { name, value } = event.target
+    setFormData((current) => ({ ...current, [name]: value }))
+  }
+
+  async function handleContactSubmit(event) {
+    event.preventDefault()
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      setFormStatus({
+        type: 'error',
+        message: 'Please enter a valid email address.',
+      })
+      return
+    }
+
+    setIsSubmitting(true)
+    setFormStatus({ type: 'idle', message: '' })
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      const result = await response.json().catch(() => ({}))
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Message could not be sent. Please try again.')
+      }
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        website: '',
+      })
+      setFormStatus({
+        type: 'success',
+        message: 'Message sent. We will get back to you soon.',
+      })
+    } catch (error) {
+      setFormStatus({
+        type: 'error',
+        message: error.message || 'Message could not be sent. Please try again.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className="contact-section py-20 text-slate-950">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -405,25 +471,82 @@ function Contact() {
             </div>
           </aside>
 
-          <form className="contact-form-card">
+          <form className="contact-form-card" onSubmit={handleContactSubmit}>
+            <label className="sr-only" htmlFor="website">
+              Website
+            </label>
+            <input
+              id="website"
+              name="website"
+              className="honeypot-field"
+              type="text"
+              value={formData.website}
+              onChange={handleContactChange}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
             <div className="grid gap-5 md:grid-cols-2">
-              <ContactField icon={User} id="name" label="Your Name" placeholder="e.g. John Doe" />
-              <ContactField icon={AtSign} id="email" label="Your Email" placeholder="e.g. john@example.com" type="email" />
+              <ContactField
+                icon={User}
+                id="name"
+                label="Your Name"
+                name="name"
+                onChange={handleContactChange}
+                placeholder="e.g. John Doe"
+                required
+                value={formData.name}
+              />
+              <ContactField
+                icon={AtSign}
+                id="email"
+                label="Your Email"
+                name="email"
+                onChange={handleContactChange}
+                placeholder="e.g. john@example.com"
+                required
+                type="email"
+                value={formData.email}
+              />
             </div>
 
-            <ContactField icon={MessageSquareText} id="subject" label="Subject" placeholder="What's this about?" />
+            <ContactField
+              icon={MessageSquareText}
+              id="subject"
+              label="Subject"
+              name="subject"
+              onChange={handleContactChange}
+              placeholder="What's this about?"
+              required
+              value={formData.subject}
+            />
 
-            <label className="contact-field">
+            <label className="contact-field" htmlFor="message">
               <span>
                 <MessageSquareText size={15} />
                 Message
               </span>
-              <textarea placeholder="Share your thoughts or project details..." rows={7} />
+              <textarea
+                id="message"
+                name="message"
+                minLength={10}
+                onChange={handleContactChange}
+                placeholder="Share your thoughts or project details..."
+                required
+                rows={7}
+                value={formData.message}
+              />
             </label>
 
-            <button className="send-button" type="button">
+            {formStatus.message ? (
+              <p className={`form-status ${formStatus.type}`} role="status">
+                {formStatus.message}
+              </p>
+            ) : null}
+
+            <button className="send-button" type="submit" disabled={isSubmitting}>
               <Send size={18} />
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
@@ -471,14 +594,32 @@ function SocialLink({ icon: Icon, label, href }) {
   )
 }
 
-function ContactField({ icon: Icon, id, label, placeholder, type = 'text' }) {
+function ContactField({
+  icon: Icon,
+  id,
+  label,
+  name,
+  onChange,
+  placeholder,
+  required = false,
+  type = 'text',
+  value,
+}) {
   return (
     <label className="contact-field" htmlFor={id}>
       <span>
         <Icon size={15} />
         {label}
       </span>
-      <input id={id} type={type} placeholder={placeholder} />
+      <input
+        id={id}
+        name={name}
+        onChange={onChange}
+        placeholder={placeholder}
+        required={required}
+        type={type}
+        value={value}
+      />
     </label>
   )
 }
