@@ -85,7 +85,7 @@ const team = [
   {
     photo: joyPhoto,
     name: 'MD Joy Islam',
-    role: 'Backend & DevOps Engineer',
+    role: 'DevOps Engineer',
     text: 'Develops backend services, manages databases and APIs, and handles deployment and infrastructure to ensure reliable and scalable research projects.',
   },
 ]
