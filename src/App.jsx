@@ -80,13 +80,13 @@ const team = [
     photo: shovoPhoto,
     name: 'Md Shahriar Rahaman',
     role: 'Software Engineer (Back-End)',
-    text: 'Builds and maintains software solutions, APIs, and system components for research-driven projects, with a focus on scalable and reliable applications.',
+    text: 'Architects and builds robust server-side systems, secure APIs, and data architectures to power scalable research applications.',
   },
   {
     photo: joyPhoto,
     name: 'MD Joy Islam',
     role: 'DevOps Engineer',
-    text: 'Develops backend services, manages databases and APIs, and handles deployment and infrastructure to ensure reliable and scalable research projects.',
+    text: 'Manages cloud infrastructure, automates deployment pipelines, and maintains system reliability to ensure seamless, continuous project delivery.',
   },
 ]
 
