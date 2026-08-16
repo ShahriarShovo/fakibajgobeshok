@@ -73,20 +73,20 @@ const team = [
   {
     photo: sharifPhoto,
     name: 'Shariful Islam',
-    role: 'Frontend Developer',
+    role: 'Frontend Sotware Engineer',
     text: 'Designs and builds polished interfaces that make research tools easier to use, scan, and understand.',
   },
   {
     photo: shovoPhoto,
     name: 'Md Shahriar Rahaman',
-    role: 'Backend & DevOps',
-    text: 'Shapes APIs, deployments, server workflows, and stable infrastructure for research-based software.',
+    role: 'Software Engineer',
+    text: 'Builds and maintains software solutions, APIs, and system components for research-driven projects, with a focus on scalable and reliable applications.',
   },
   {
     photo: joyPhoto,
     name: 'MD Joy Islam',
-    role: 'Backend Developer',
-    text: 'Develops backend logic, data flows, and reliable services that support student and research projects.',
+    role: 'Backend & DevOps Engineer',
+    text: 'Develops backend services, manages databases and APIs, and handles deployment and infrastructure to ensure reliable and scalable research projects.',
   },
 ]
 
@@ -320,12 +320,12 @@ function Team() {
   return (
     <section id="team" className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-3xl">
-            <p className="section-kicker">Team</p>
-            <h2 className="section-title">Built by mentors, makers, and student-first operators.</h2>
-          </div>
-          <p className="max-w-md leading-7 text-slate-600">
+        <div className="w-full">
+          <p className="section-kicker">Team</p>
+          <h2 className="section-title lg:whitespace-nowrap lg:!text-[2.2rem] xl:!text-[3rem]" style={{ maxWidth: '100%' }}>
+            Built by mentors, makers, and student-first operators.
+          </h2>
+          <p className="section-copy lg:whitespace-nowrap" style={{ maxWidth: '100%' }}>
             A compact team model covering research mentoring, software development, student growth, and delivery.
           </p>
         </div>
