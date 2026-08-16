@@ -73,13 +73,13 @@ const team = [
   {
     photo: sharifPhoto,
     name: 'Shariful Islam',
-    role: 'Front-End Software Engineer',
+    role: 'Software Engineer (Front-End)',
     text: 'Designs and builds polished interfaces that make research tools easier to use, scan, and understand.',
   },
   {
     photo: shovoPhoto,
     name: 'Md Shahriar Rahaman',
-    role: 'Software Engineer (Backend)',
+    role: 'Software Engineer (Back-End)',
     text: 'Builds and maintains software solutions, APIs, and system components for research-driven projects, with a focus on scalable and reliable applications.',
   },
   {
