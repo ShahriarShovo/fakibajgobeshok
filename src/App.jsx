@@ -73,7 +73,7 @@ const team = [
   {
     photo: sharifPhoto,
     name: 'Shariful Islam',
-    role: 'Frontend Sotware Engineer',
+    role: 'Frontend Software Engineer',
     text: 'Designs and builds polished interfaces that make research tools easier to use, scan, and understand.',
   },
   {
