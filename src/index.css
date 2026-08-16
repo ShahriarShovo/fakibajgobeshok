@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
+/* GPU Acceleration for scroll lag */
+section,
+header,
+.about-process-card,
+.contact-info-card,
+.contact-form-card,
+.mangoseed-panel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
 @theme {
   --color-accent: #0f766e;
   --color-accent-dark: #0b5d56;
@@ -357,6 +370,8 @@ a {
     linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+  transform: translateZ(0);
+  will-change: transform;
   content: "";
 }
 
