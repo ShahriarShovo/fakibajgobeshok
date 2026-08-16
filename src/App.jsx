@@ -465,9 +465,9 @@ function Contact() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <SocialLink icon={FaLinkedinIn} label="LinkedIn" href="https://linkedin.com/company/fakibaj-gobeshok" />
+              {/* <SocialLink icon={FaLinkedinIn} label="LinkedIn" href="https://linkedin.com/company/fakibaj-gobeshok" />
               <SocialLink icon={FaFacebookF} label="Facebook" href="https://www.facebook.com/fakibaj.gobeshok" />
-              <SocialLink icon={FaYoutube} label="YouTube" href="https://youtube.com/@fakibazgobeshok" />
+              <SocialLink icon={FaYoutube} label="YouTube" href="https://youtube.com/@fakibazgobeshok" /> */}
             </div>
           </aside>
 
